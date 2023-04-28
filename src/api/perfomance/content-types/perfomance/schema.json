@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "perfomances",
+  "info": {
+    "singularName": "perfomance",
+    "pluralName": "perfomances",
+    "displayName": "Perfomance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event.event"
+    },
+    "archived": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

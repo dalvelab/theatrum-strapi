@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_event_roles",
+  "info": {
+    "displayName": "role"
+  },
+  "options": {},
+  "attributes": {
+    "role": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

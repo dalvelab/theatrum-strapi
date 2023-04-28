@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_news_sources",
+  "info": {
+    "displayName": "source"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
