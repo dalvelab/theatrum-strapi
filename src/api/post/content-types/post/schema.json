@@ -30,6 +30,14 @@
       "type": "component",
       "repeatable": false,
       "component": "news.source"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "info",
+        "press"
+      ],
+      "default": "info"
     }
   }
 }

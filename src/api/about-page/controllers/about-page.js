@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * partner controller
+ * about-page controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::partner.partner');
+module.exports = createCoreController('api::about-page.about-page');

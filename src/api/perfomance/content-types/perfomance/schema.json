@@ -4,10 +4,11 @@
   "info": {
     "singularName": "perfomance",
     "pluralName": "perfomances",
-    "displayName": "Perfomance"
+    "displayName": "Perfomance",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

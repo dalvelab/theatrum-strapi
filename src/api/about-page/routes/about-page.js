@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * partner router
+ * about-page router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::partner.partner');
+module.exports = createCoreRouter('api::about-page.about-page');
