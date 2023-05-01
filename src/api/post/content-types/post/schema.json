@@ -13,18 +13,20 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "image": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "source": {
       "type": "component",
@@ -37,12 +39,16 @@
         "info",
         "press"
       ],
-      "default": "info"
+      "default": "info",
+      "required": true
     },
     "meta": {
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

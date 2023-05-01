@@ -1,19 +1,22 @@
 {
   "collectionName": "components_about_scenes",
   "info": {
-    "displayName": "scene"
+    "displayName": "scene",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "documents": {
       "type": "component",
@@ -21,7 +24,8 @@
       "component": "documents.advanced-document"
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     }
   }
 }

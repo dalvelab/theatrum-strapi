@@ -13,10 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "age_limit": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "premiere": {
       "type": "boolean",
@@ -37,13 +39,14 @@
     "banner": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "production_team": {
       "type": "component",
