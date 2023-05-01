@@ -64,6 +64,11 @@
     },
     "properties": {
       "type": "richtext"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

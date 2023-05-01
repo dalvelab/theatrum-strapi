@@ -15,6 +15,9 @@
     },
     "ticket_link": {
       "type": "string"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }
