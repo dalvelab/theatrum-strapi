@@ -19,6 +19,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "contacts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.contact"
     }
   }
 }

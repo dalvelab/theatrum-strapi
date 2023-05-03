@@ -26,6 +26,12 @@
       "type": "component",
       "repeatable": true,
       "component": "about.scene"
+    },
+    "description": {
+      "displayName": "TextBlock",
+      "type": "component",
+      "repeatable": true,
+      "component": "about.text-block"
     }
   }
 }

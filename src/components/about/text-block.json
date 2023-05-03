@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_about_text_blocks",
+  "info": {
+    "displayName": "TextBlock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "button": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "table_booking"
+      ],
+      "default": "none",
+      "required": true
+    }
+  }
+}

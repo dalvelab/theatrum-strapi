@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "sliders",
+  "info": {
+    "singularName": "slider",
+    "pluralName": "sliders",
+    "displayName": "Slider",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slides": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::afisha.afisha"
+    }
+  }
+}

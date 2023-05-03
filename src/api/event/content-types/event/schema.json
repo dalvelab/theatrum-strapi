@@ -14,7 +14,8 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "age_limit": {
       "type": "integer",
@@ -59,7 +60,8 @@
       "component": "event.role"
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "unique": false
     },
     "small_description": {
       "type": "text",
