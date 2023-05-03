@@ -15,13 +15,13 @@
       "default": true,
       "required": true
     },
-    "ticket_link": {
-      "type": "string",
-      "required": true
-    },
-    "name": {
+    "title": {
       "type": "string",
       "private": true,
+      "required": true
+    },
+    "link": {
+      "type": "string",
       "required": true
     }
   }

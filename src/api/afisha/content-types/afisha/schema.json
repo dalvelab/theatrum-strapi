@@ -17,16 +17,15 @@
       "relation": "oneToOne",
       "target": "api::event.event"
     },
-    "tickets": {
-      "type": "component",
-      "repeatable": true,
-      "component": "event.ticket",
-      "required": true
-    },
     "title": {
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "tickets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event.ticket"
     }
   }
 }
