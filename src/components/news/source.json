@@ -13,6 +13,9 @@
     "link": {
       "type": "string",
       "required": false
+    },
+    "publish_date": {
+      "type": "date"
     }
   }
 }
