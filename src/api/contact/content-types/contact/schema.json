@@ -24,6 +24,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "working_time": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
     }
   }
 }
