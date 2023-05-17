@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_socials",
+  "info": {
+    "displayName": "social"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "vk",
+        "telegram",
+        "instagram",
+        "odnoklassniki"
+      ]
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
