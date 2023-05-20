@@ -1,7 +1,8 @@
 {
   "collectionName": "components_about_socials",
   "info": {
-    "displayName": "social"
+    "displayName": "social",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,10 +13,12 @@
         "telegram",
         "instagram",
         "odnoklassniki"
-      ]
+      ],
+      "required": true
     },
     "link": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

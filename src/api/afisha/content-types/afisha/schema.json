@@ -25,7 +25,8 @@
     "tickets": {
       "type": "component",
       "repeatable": true,
-      "component": "event.ticket"
+      "component": "event.ticket",
+      "required": true
     }
   }
 }

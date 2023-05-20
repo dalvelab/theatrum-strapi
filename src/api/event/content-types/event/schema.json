@@ -23,11 +23,13 @@
     },
     "premiere": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "required": true
     },
     "pushkin_card": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "required": true
     },
     "gallery": {
       "type": "media",
@@ -65,7 +67,8 @@
     },
     "small_description": {
       "type": "text",
-      "maxLength": 150
+      "maxLength": 150,
+      "required": true
     },
     "properties": {
       "type": "richtext"
