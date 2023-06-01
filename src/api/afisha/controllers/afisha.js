@@ -35,4 +35,17 @@ module.exports = createCoreController('api::afisha.afisha', ({strapi}) => ({
 
     return { data: sortedData, meta };
   },
+  async findOne(ctx) {
+    const { data, meta } = await super.findOne(ctx);
+
+    if (!data || !data.attributes.tickets || data.attributes.tickets.length < 2) {
+      return { data, meta };
+    }
+
+    const sortedTickets = data.attributes.tickets.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    data.attributes.tickets = sortedTickets;
+
+    return { data, meta };
+  }
 }));
