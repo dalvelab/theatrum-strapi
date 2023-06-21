@@ -21,6 +21,11 @@ module.exports = {
           if (new Date(event.tickets[0].date) < currentDate && event.tickets.length > 1) {
             const tickets = event.tickets.filter((ticket) => new Date(ticket.date) > currentDate);
 
+            if (tickets.length === 0) {
+              strapi.entityService.delete("api::afisha.afisha", event.id);
+              return;
+            }
+
             strapi.entityService.update("api::afisha.afisha", event.id, {
               data: {
                 tickets,
@@ -33,6 +38,7 @@ module.exports = {
       }
     },
     options: {
+      // rule: '*/1 * * * *',
       rule: "* 22 * * *",
     },
   },
