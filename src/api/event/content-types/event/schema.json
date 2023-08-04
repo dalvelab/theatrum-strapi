@@ -77,6 +77,11 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"
+    },
+    "promoted_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::afisha.afisha"
     }
   }
 }
