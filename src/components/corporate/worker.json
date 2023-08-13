@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_corporate_workers",
+  "info": {
+    "displayName": "Worker",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "worker": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::worker.worker"
+    },
+    "role": {
+      "type": "string"
+    }
+  }
+}

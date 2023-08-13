@@ -42,4 +42,29 @@ module.exports = {
       rule: "* 22 * * *",
     },
   },
+  deletePastEventsFromFestival: {
+    task: async ({ strapi }) => {
+      try {
+        const festival = await strapi.entityService.findMany("api::festival.festival");
+
+        if (!festival || festival.length === 0) {
+          return;
+        }
+
+        const currentDate = new Date();
+        
+        festival.forEach((event) => {
+          if (new Date(event.date) < currentDate) {
+            strapi.entityService.delete("api::festival.festival", event.id);
+          }
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    options: {
+      // rule: '*/1 * * * *',
+      rule: "* 22 * * *",
+    },
+  },
 };
