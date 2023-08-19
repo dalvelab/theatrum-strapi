@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_corporate_event_passports",
+  "info": {
+    "displayName": "EventPassport"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

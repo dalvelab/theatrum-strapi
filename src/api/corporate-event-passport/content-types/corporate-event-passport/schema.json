@@ -4,17 +4,18 @@
   "info": {
     "singularName": "corporate-event-passport",
     "pluralName": "corporate-event-passports",
-    "displayName": "CorporateEventPassport"
+    "displayName": "CorporateEventPassport",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "link": {
-      "type": "string"
+    "events": {
+      "displayName": "EventPassport",
+      "type": "component",
+      "repeatable": true,
+      "component": "corporate.event-passport"
     }
   }
 }
