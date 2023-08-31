@@ -42,29 +42,37 @@ module.exports = {
       rule: "* 22 * * *",
     },
   },
-  // deletePastEventsFromFestival: {
-  //   task: async ({ strapi }) => {
-  //     try {
-  //       const festival = await strapi.entityService.findMany("api::festival.festival");
+  movePastEventsFromScheduleToArhive: {
+    task: async ({ strapi }) => {
+      try {
+        const currentSchedule = await strapi.entityService.findMany("api::corporate-schedule.corporate-schedule", {
+          populate: ["people", "people.worker"]
+        });
 
-  //       if (!festival || festival.length === 0) {
-  //         return;
-  //       }
+        if (!currentSchedule || currentSchedule.length === 0) {
+          return;
+        }
 
-  //       const currentDate = new Date();
+        const currentDate = new Date();
+
+        const outdatedEvents = currentSchedule.filter((event) => new Date(event.date) < currentDate);
         
-  //       festival.forEach((event) => {
-  //         if (new Date(event.date) < currentDate) {
-  //           strapi.entityService.delete("api::festival.festival", event.id);
-  //         }
-  //       });
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   },
-  //   options: {
-  //     // rule: '*/1 * * * *',
-  //     rule: "* 22 * * *",
-  //   },
-  // },
+        // ADD EVENTS TO ARCHIVE
+        outdatedEvents.forEach((event) => strapi.entityService.create("api::corporate-schedule-archive.corporate-schedule-archive", {
+          data: {
+            ...event
+          },
+          populate: ["people", "people.worker"]
+        }));
+        // DELETE ADDED TO ARCHIVE EVENTS
+        outdatedEvents.forEach((event) => strapi.entityService.delete("api::corporate-schedule.corporate-schedule", event.id));
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    options: {
+      // rule: '*/1 * * * *',
+      rule: "* 22 * * *",
+    },
+  },
 };

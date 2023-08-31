@@ -43,11 +43,6 @@
     },
     "additional_info": {
       "type": "richtext"
-    },
-    "archived": {
-      "type": "boolean",
-      "default": false,
-      "required": false
     }
   }
 }

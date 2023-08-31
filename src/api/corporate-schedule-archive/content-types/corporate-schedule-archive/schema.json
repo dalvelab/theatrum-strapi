@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "corporate_schedule_archives",
+  "info": {
+    "singularName": "corporate-schedule-archive",
+    "pluralName": "corporate-schedule-archives",
+    "displayName": "CorporateScheduleArchive",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "location": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "additional_info": {
+      "type": "richtext"
+    },
+    "people": {
+      "type": "component",
+      "repeatable": true,
+      "component": "corporate.worker"
+    }
+  }
+}
