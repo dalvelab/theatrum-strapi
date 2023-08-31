@@ -18,6 +18,6 @@ module.exports = createCoreController('api::corporate-event-passport.corporate-e
 
     const sortedEvents = data.events.sort((a, b) => a.title.localeCompare(b.title));
 
-    return {...data, events: sortedEvents};
+    return {data: {...data, events: sortedEvents}};
   },
 }));
