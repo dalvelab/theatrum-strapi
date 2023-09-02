@@ -43,6 +43,10 @@
     },
     "additional_info": {
       "type": "richtext"
+    },
+    "timeBadge": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
