@@ -9,7 +9,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::corporate-event-passport.corporate-event-passport', ({strapi}) => ({
   async find() {
     const data = await strapi.entityService.findMany('api::corporate-event-passport.corporate-event-passport', {
-      populate: ['events']
+      populate: ['events', 'events.document']
     });
 
     if (!data || data.events.length === 0) {
