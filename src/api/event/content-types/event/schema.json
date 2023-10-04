@@ -82,6 +82,14 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::afisha.afisha"
+    },
+    "season": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "fazioli"
+      ],
+      "default": "none"
     }
   }
 }
