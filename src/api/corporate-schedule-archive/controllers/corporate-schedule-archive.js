@@ -43,9 +43,19 @@ module.exports = createCoreController('api::corporate-schedule-archive.corporate
       },
       sort: {
         date: 'desc'
-      }
+      },
+      populate: ["people", "people.worker"]
     });
 
-    return { data };
+    const response = data.map((event) => {
+      return {
+        id: event.id,
+        attributes: {
+          ...event
+        }
+      }
+    }) 
+
+    return { data: response };
   }
 }));
