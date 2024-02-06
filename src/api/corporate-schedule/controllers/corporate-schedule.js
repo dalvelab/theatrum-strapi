@@ -6,7 +6,7 @@ module.exports = createCoreController('api::corporate-schedule.corporate-schedul
   async find() {
     const data = await strapi.entityService.findMany("api::corporate-schedule.corporate-schedule", {
       sort: {
-        date: 'desc'
+        date: 'asc'
       }
     });
 
@@ -38,7 +38,7 @@ module.exports = createCoreController('api::corporate-schedule.corporate-schedul
         }
       },
       sort: {
-        date: 'desc'
+        date: 'asc'
       },
       populate: ["people", "people.worker"]
     });
