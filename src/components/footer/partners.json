@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_footer_partners",
+  "info": {
+    "displayName": "partner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

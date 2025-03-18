@@ -137,6 +137,18 @@ export interface EventTicket extends Schema.Component {
   };
 }
 
+export interface FooterPartners extends Schema.Component {
+  collectionName: 'components_footer_partners';
+  info: {
+    displayName: 'partner';
+    description: '';
+  };
+  attributes: {
+    link: Attribute.String;
+    image: Attribute.Media;
+  };
+}
+
 export interface NewsSource extends Schema.Component {
   collectionName: 'components_news_sources';
   info: {
@@ -175,6 +187,7 @@ declare module '@strapi/types' {
       'documents.advanced-document': DocumentsAdvancedDocument;
       'event.role': EventRole;
       'event.ticket': EventTicket;
+      'footer.partners': FooterPartners;
       'news.source': NewsSource;
       'seo.seo': SeoSeo;
     }

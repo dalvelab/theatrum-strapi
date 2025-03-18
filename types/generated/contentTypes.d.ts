@@ -1027,11 +1027,11 @@ export interface ApiFooterFooter extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    partners: Attribute.Media;
     contacts: Attribute.Component<'contact.contact', true>;
     socials: Attribute.Component<'about.social', true>;
     working_time: Attribute.String;
     address: Attribute.String;
+    partners: Attribute.Component<'footer.partners', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

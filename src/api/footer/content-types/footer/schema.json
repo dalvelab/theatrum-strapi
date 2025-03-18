@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "partners": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "contacts": {
       "type": "component",
       "repeatable": true,
@@ -35,6 +27,12 @@
     },
     "address": {
       "type": "string"
+    },
+    "partners": {
+      "displayName": "partners",
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.partners"
     }
   }
 }
