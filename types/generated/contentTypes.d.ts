@@ -975,9 +975,6 @@ export interface ApiEventEvent extends Schema.CollectionType {
     premiere: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
-    pushkin_card: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
     gallery: Attribute.Media;
     banner: Attribute.Media & Attribute.Required;
     description: Attribute.RichText & Attribute.Required;
@@ -998,6 +995,11 @@ export interface ApiEventEvent extends Schema.CollectionType {
     >;
     season: Attribute.Enumeration<['none', 'fazioli']> &
       Attribute.DefaultTo<'none'>;
+    project_type: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'api::project-type.project-type'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1151,6 +1153,72 @@ export interface ApiPostPost extends Schema.CollectionType {
   };
 }
 
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'Project';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+    project_type: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'api::project-type.project-type'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectTypeProjectType extends Schema.CollectionType {
+  collectionName: 'project_types';
+  info: {
+    singularName: 'project-type';
+    pluralName: 'project-types';
+    displayName: 'ProjectType';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project-type.project-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project-type.project-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSliderSlider extends Schema.SingleType {
   collectionName: 'sliders';
   info: {
@@ -1243,6 +1311,8 @@ declare module '@strapi/types' {
       'api::message.message': ApiMessageMessage;
       'api::perfomance.perfomance': ApiPerfomancePerfomance;
       'api::post.post': ApiPostPost;
+      'api::project.project': ApiProjectProject;
+      'api::project-type.project-type': ApiProjectTypeProjectType;
       'api::slider.slider': ApiSliderSlider;
       'api::worker.worker': ApiWorkerWorker;
     }
