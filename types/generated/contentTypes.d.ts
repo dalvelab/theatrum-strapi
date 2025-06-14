@@ -1172,6 +1172,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'oneToOne',
       'api::project-type.project-type'
     >;
+    gallery: Attribute.Media & Attribute.Required;
+    description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

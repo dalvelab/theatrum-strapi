@@ -27,6 +27,17 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::project-type.project-type"
+    },
+    "gallery": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
