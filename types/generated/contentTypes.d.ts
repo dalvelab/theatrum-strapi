@@ -869,6 +869,37 @@ export interface ApiCorporateEventPassportCorporateEventPassport
   };
 }
 
+export interface ApiCorporateInformationCorporateInformation
+  extends Schema.CollectionType {
+  collectionName: 'corporate_informations';
+  info: {
+    singularName: 'corporate-information';
+    pluralName: 'corporate-informations';
+    displayName: 'CorporateInformation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::corporate-information.corporate-information',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::corporate-information.corporate-information',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCorporateScheduleCorporateSchedule
   extends Schema.CollectionType {
   collectionName: 'corporate_schedules';
@@ -1306,6 +1337,7 @@ declare module '@strapi/types' {
       'api::afisha.afisha': ApiAfishaAfisha;
       'api::contact.contact': ApiContactContact;
       'api::corporate-event-passport.corporate-event-passport': ApiCorporateEventPassportCorporateEventPassport;
+      'api::corporate-information.corporate-information': ApiCorporateInformationCorporateInformation;
       'api::corporate-schedule.corporate-schedule': ApiCorporateScheduleCorporateSchedule;
       'api::corporate-schedule-archive.corporate-schedule-archive': ApiCorporateScheduleArchiveCorporateScheduleArchive;
       'api::event.event': ApiEventEvent;

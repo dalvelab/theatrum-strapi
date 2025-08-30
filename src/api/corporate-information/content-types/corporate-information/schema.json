@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "corporate_informations",
+  "info": {
+    "singularName": "corporate-information",
+    "pluralName": "corporate-informations",
+    "displayName": "CorporateInformation"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
