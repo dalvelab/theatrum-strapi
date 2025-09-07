@@ -4,7 +4,19 @@
  * push-subscription service
  */
 
+const webpush = require('web-push');
 const { createCoreService } = require('@strapi/strapi').factories;
+
+const vapidKeys = {
+  publicKey: process.env.VAPID_PUBLIC_KEY,
+  privateKey: process.env.VAPID_PRIVATE_KEY
+};
+
+webpush.setVapidDetails(
+  'https://theatrum.center/contacts',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
 
 module.exports = createCoreService('api::push-subscription.push-subscription', ({ strapi }) => ({
   async sendNotification(subscription, payload) {

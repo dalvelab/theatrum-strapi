@@ -876,12 +876,13 @@ export interface ApiCorporateInformationCorporateInformation
     singularName: 'corporate-information';
     pluralName: 'corporate-informations';
     displayName: 'CorporateInformation';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
     description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

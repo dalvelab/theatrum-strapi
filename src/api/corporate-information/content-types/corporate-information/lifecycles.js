@@ -13,11 +13,11 @@ module.exports = {
       const { data } = event.params;
 
       const payload = {
-        title: "Новая публикация в информации",
+        title: "Новая информация",
         body: data.title,
         icon: "/icon-192x192.png",
         data: {
-          url: "/information",
+          url: "https://work.theatrum.center/information",
           dateOfArrival: Date.now(),
         },
       };

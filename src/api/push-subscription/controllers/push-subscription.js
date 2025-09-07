@@ -6,4 +6,10 @@
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::push-subscription.push-subscription');
+module.exports = createCoreController('api::push-subscription.push-subscription', ({strapi}) => ({
+  async find() {
+    const response = await  strapi.entityService.findMany('api::push-subscription.push-subscription');
+
+    return { data: response };
+  }
+}));
