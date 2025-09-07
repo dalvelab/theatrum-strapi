@@ -1252,6 +1252,38 @@ export interface ApiProjectTypeProjectType extends Schema.CollectionType {
   };
 }
 
+export interface ApiPushSubscriptionPushSubscription
+  extends Schema.CollectionType {
+  collectionName: 'push_subscriptions';
+  info: {
+    singularName: 'push-subscription';
+    pluralName: 'push-subscriptions';
+    displayName: 'Push Subscription';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    subscription: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::push-subscription.push-subscription',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::push-subscription.push-subscription',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSliderSlider extends Schema.SingleType {
   collectionName: 'sliders';
   info: {
@@ -1347,6 +1379,7 @@ declare module '@strapi/types' {
       'api::post.post': ApiPostPost;
       'api::project.project': ApiProjectProject;
       'api::project-type.project-type': ApiProjectTypeProjectType;
+      'api::push-subscription.push-subscription': ApiPushSubscriptionPushSubscription;
       'api::slider.slider': ApiSliderSlider;
       'api::worker.worker': ApiWorkerWorker;
     }
